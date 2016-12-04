@@ -203,7 +203,7 @@ else
 	echo "What protocol do you want for OpenVPN?"
 	echo "Unless UDP is blocked, you should not use TCP (unnecessarily slower)"
 	PROTOCOL=UDP
-	echo "$UDP"
+	echo "$PROTOCOL"
 	echo ""
 	echo "What DNS do you want to use with the VPN?"
 	echo "   1) Current system resolvers (/etc/resolv.conf)"
