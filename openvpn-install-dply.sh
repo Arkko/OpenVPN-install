@@ -229,76 +229,26 @@ else
 	echo "   5) CAMELLIA-192-CBC"
 	echo "   6) CAMELLIA-256-CBC"
 	echo "   7) SEED-CBC"
-	while [[ $CIPHER != "1" && $CIPHER != "2" && $CIPHER != "3" && $CIPHER != "4" && $CIPHER != "5" && $CIPHER != "6" && $CIPHER != "7" ]]; do
-		read -p "Cipher [1-7]: " -e -i 1 CIPHER
-	done
-	case $CIPHER in
-		1)
-		CIPHER="cipher AES-128-CBC"
-		;;
-		2)
-		CIPHER="cipher AES-192-CBC"
-		;;
-		3)
-		CIPHER="cipher AES-256-CBC"
-		;;
-		4)
-		CIPHER="cipher CAMELLIA-128-CBC"
-		;;
-		5)
-		CIPHER="cipher CAMELLIA-192-CBC"
-		;;
-		6)
-		CIPHER="cipher CAMELLIA-256-CBC"
-		;;
-		5)
-		CIPHER="cipher SEED-CBC"
-		;;
-	esac
+	CIPHER="cipher AES-128-CBC"
+	echo "$CIPHER"
 	echo ""
 	echo "Choose what size of Diffie-Hellman key you want to use:"
 	echo "   1) 2048 bits (fastest)"
 	echo "   2) 3072 bits (recommended, best compromise)"
 	echo "   3) 4096 bits (most secure)"
-	while [[ $DH_KEY_SIZE != "1" && $DH_KEY_SIZE != "2" && $DH_KEY_SIZE != "3" ]]; do
-		read -p "DH key size [1-3]: " -e -i 2 DH_KEY_SIZE
-	done
-	case $DH_KEY_SIZE in
-		1)
-		DH_KEY_SIZE="2048"
-		;;
-		2)
-		DH_KEY_SIZE="3072"
-		;;
-		3)
-		DH_KEY_SIZE="4096"
-		;;
-	esac
+	DH_KEY_SIZE="3072"
+	echo "$DH_KEY_SIZE"
 	echo ""
 	echo "Choose what size of RSA key you want to use:"
 	echo "   1) 2048 bits (fastest)"
 	echo "   2) 3072 bits (recommended, best compromise)"
 	echo "   3) 4096 bits (most secure)"
-	while [[ $RSA_KEY_SIZE != "1" && $RSA_KEY_SIZE != "2" && $RSA_KEY_SIZE != "3" ]]; do
-		read -p "DH key size [1-3]: " -e -i 2 RSA_KEY_SIZE
-	done
-	case $RSA_KEY_SIZE in
-		1)
-		RSA_KEY_SIZE="2048"
-		;;
-		2)
-		RSA_KEY_SIZE="3072"
-		;;
-		3)
-		RSA_KEY_SIZE="4096"
-		;;
-	esac
+	RSA_KEY_SIZE="3072"
+	echo "$RSA_KEY_SIZE"
 	echo ""
 	echo "Finally, tell me a name for the client certificate and configuration"
-	while [[ $CLIENT = "" ]]; do
-		echo "Please, use one word only, no special characters"
-		read -p "Client name: " -e -i client CLIENT
-	done
+	CLIENT="client1"
+	echo "$CLIENT"
 	echo ""
 	echo "Okay, that was all I needed. We are ready to setup your OpenVPN server now"
 	read -n1 -r -p "Press any key to continue..."
